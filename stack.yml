@@ -1,16 +1,19 @@
 version: '3.1'
 
 services:
- db:
-  image: mysql
-  command: --default-authentication-plugin=mysql_native_password
+ mongo:
+  image: mongo
   ports:
-   - 3306:3306
+   - 27018:27017
   environment:
-   MYSQL_USER: root
-   MYSQL_ROOT_PASSWORD: root
+   MONGO_INITDB_DATABASE: selecaojava
   volumes:
-   - microservices_selecaojava:/var/lib/mysql
+   - ./docker-entrypoint-initdb.d/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
 
-volumes:
- microservices_selecaojava:
+ mongo-express:
+  image: mongo-express
+  ports:
+   - 8081:8081
+  environment:
+   ME_CONFIG_MONGODB_ADMINUSERNAME: root
+   ME_CONFIG_MONGODB_ADMINPASSWORD: root

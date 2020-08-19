@@ -1,7 +1,6 @@
 package com.stefanini.selecaojava.endpoint.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -26,12 +25,12 @@ public class PessoaController extends ExceptionHandler {
 	private final PessoaService pessoaService;
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Iterable<Pessoa>> list(Pageable pageable) {
-		return new ResponseEntity<>(pessoaService.list(pageable), HttpStatus.OK);
+	public ResponseEntity<Iterable<Pessoa>> list() {
+		return new ResponseEntity<>(pessoaService.list(), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Object> get(@PathVariable("id") Long id) {
+	public ResponseEntity<Object> get(@PathVariable("id") String id) {
 		try {
 			return new ResponseEntity<>(pessoaService.get(id), HttpStatus.OK);
 		} catch (Exception e) {
