@@ -56,3 +56,8 @@ build/
 ### VS Code ###
 .vscode/
 /bin/
+
+### Front End ####
+./src/main/web/np-app/dist
+./src/main/web/np-app/tmp
+./src/main/web/np-app/node_modules
