@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "150b85b4-f828-4d5f-8192-210bb5ec43ad",
+		"name": "Selecao-Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"selecaojava\", \r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/pessoa",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxlY2FvamF2YSIsImV4cCI6MTU5ODIwOTM1NSwiaWF0IjoxNTk4MTkxMzU1fQ.o-DnEar4fI6kuki93SU8L4RLxtISh4Ghmjjz4ooBU6dV-2RJUVy2xUR3zwPtCA9JLu80tqfYNphCEHBleHSblA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/pessoa/{id_pessoa}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxlY2FvamF2YSIsImV4cCI6MTU5ODIwOTM1NSwiaWF0IjoxNTk4MTkxMzU1fQ.o-DnEar4fI6kuki93SU8L4RLxtISh4Ghmjjz4ooBU6dV-2RJUVy2xUR3zwPtCA9JLu80tqfYNphCEHBleHSblA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pessoa/5f3edb50de186a0acf8f3ad0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pessoa",
+						"5f3edb50de186a0acf8f3ad0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/pessoa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxlY2FvamF2YSIsImV4cCI6MTU5ODIwOTM1NSwiaWF0IjoxNTk4MTkxMzU1fQ.o-DnEar4fI6kuki93SU8L4RLxtISh4Ghmjjz4ooBU6dV-2RJUVy2xUR3zwPtCA9JLu80tqfYNphCEHBleHSblA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"nome\": \"Kaique Candido de Oliveira\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"email\": \"kaiqueoliveira.ci@gmail.com\",\r\n    \"dt_nascimento\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"naturalidade\": \"São Paulo\",\r\n    \"nacionalidade\": \"Brasileira\",\r\n    \"cpf\": \"09750123477\",\r\n    \"dt_cadastro\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"dt_atualizacao\": \"2020-08-30T03:00:00.000+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v2/pessoa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxlY2FvamF2YSIsImV4cCI6MTU5ODIwOTM1NSwiaWF0IjoxNTk4MTkxMzU1fQ.o-DnEar4fI6kuki93SU8L4RLxtISh4Ghmjjz4ooBU6dV-2RJUVy2xUR3zwPtCA9JLu80tqfYNphCEHBleHSblA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"nome\": \"Kaique Candido de Oliveira\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"email\": \"kaiqueoliveira.ci@gmail.com\",\r\n    \"dt_nascimento\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"naturalidade\": \"São Paulo\",\r\n    \"nacionalidade\": \"Brasileira\",\r\n    \"cpf\": \"09750123477\",\r\n    \"endereco\": \"Endereço teste\",\r\n    \"dt_cadastro\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"dt_atualizacao\": \"2020-08-30T03:00:00.000+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/pessoa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxlY2FvamF2YSIsImV4cCI6MTU5ODIwOTM1NSwiaWF0IjoxNTk4MTkxMzU1fQ.o-DnEar4fI6kuki93SU8L4RLxtISh4Ghmjjz4ooBU6dV-2RJUVy2xUR3zwPtCA9JLu80tqfYNphCEHBleHSblA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": \"5f427ee34df7ae723ba6268d\",\r\n    \"nome\": \"Kaique Candido de Oliveira Update\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"email\": \"kaiqueoliveira.ci@gmail.com\",\r\n    \"dt_nascimento\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"naturalidade\": \"São Paulo\",\r\n    \"nacionalidade\": \"Brasileira\",\r\n    \"cpf\": \"09750123477\",\r\n    \"dt_cadastro\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"dt_atualizacao\": \"2020-08-30T03:00:00.000+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v2/pessoa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxlY2FvamF2YSIsImV4cCI6MTU5ODIwOTM1NSwiaWF0IjoxNTk4MTkxMzU1fQ.o-DnEar4fI6kuki93SU8L4RLxtISh4Ghmjjz4ooBU6dV-2RJUVy2xUR3zwPtCA9JLu80tqfYNphCEHBleHSblA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"id\": \"5f427ee34df7ae723ba6268d\",\r\n    \"nome\": \"Kaique Candido de Oliveira Update\",\r\n    \"sexo\": \"MASCULINO\",\r\n    \"email\": \"kaiqueoliveira.ci@gmail.com\",\r\n    \"dt_nascimento\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"naturalidade\": \"São Paulo\",\r\n    \"nacionalidade\": \"Brasileira\",\r\n    \"cpf\": \"09750123477\",\r\n    \"endereco\": \"Endereço teste\",\r\n    \"dt_cadastro\": \"2020-08-30T03:00:00.000+00:00\",\r\n    \"dt_atualizacao\": \"2020-08-30T03:00:00.000+00:00\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v1/pessoa/{id_pessoa}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzZWxlY2FvamF2YSIsImV4cCI6MTU5ODIwOTM1NSwiaWF0IjoxNTk4MTkxMzU1fQ.o-DnEar4fI6kuki93SU8L4RLxtISh4Ghmjjz4ooBU6dV-2RJUVy2xUR3zwPtCA9JLu80tqfYNphCEHBleHSblA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pessoa/5f427ee34df7ae723ba6268d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pessoa",
+						"5f427ee34df7ae723ba6268d"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
