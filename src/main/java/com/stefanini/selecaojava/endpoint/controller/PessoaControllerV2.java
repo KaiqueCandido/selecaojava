@@ -13,17 +13,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stefanini.selecaojava.endpoint.service.PessoaService;
+import com.stefanini.selecaojava.endpoint.service.PessoaServiceV2;
+import com.stefanini.selecaojava.exception.PessoaException;
 import com.stefanini.selecaojava.model.entity.Pessoa;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("api/v1/pessoa")
+@Slf4j
+@RequestMapping("api/v2/pessoa")
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class PessoaController extends ExceptionHandler {
+public class PessoaControllerV2 extends ExceptionHandler {
 
-	private final PessoaService pessoaService;
+	private final PessoaServiceV2 pessoaService;
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Iterable<Pessoa>> list() {
@@ -44,13 +47,18 @@ public class PessoaController extends ExceptionHandler {
 		try {
 			return new ResponseEntity<>(pessoaService.save(pessoa), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<>(this.conflict(e), HttpStatus.CONFLICT); 
+			return new ResponseEntity<>(this.conflict(e), HttpStatus.CONFLICT);
 		}
 	}
 
 	@PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Pessoa> update(@RequestBody Pessoa pessoa) {
-		return new ResponseEntity<>(pessoaService.update(pessoa), HttpStatus.OK);
+	public ResponseEntity<?> update(@RequestBody Pessoa pessoa) {
+		try {
+			return new ResponseEntity<>(pessoaService.update(pessoa), HttpStatus.OK);
+		} catch (PessoaException e) {
+			log.info("Saving people");
+			return new ResponseEntity<>(this.notAccepttable(e), HttpStatus.NOT_ACCEPTABLE);
+		}
 	}
 
 	@DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

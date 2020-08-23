@@ -2,22 +2,18 @@ package com.stefanini.selecaojava.endpoint.service;
 
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
-import org.assertj.core.util.Arrays;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.exceptions.misusing.MissingMethodInvocationException;
 import org.mockito.exceptions.misusing.WrongTypeOfReturnValue;
 
 import com.stefanini.selecaojava.endpoint.service.builder.PessoaServiceBuilder;
 import com.stefanini.selecaojava.exception.PessoaException;
-import com.stefanini.selecaojava.mode.entity.Pessoa;
+import com.stefanini.selecaojava.model.entity.Pessoa;
 import com.stefanini.selecaojava.repository.PessoaRepository;
 
 public class PessoaServiceTest {

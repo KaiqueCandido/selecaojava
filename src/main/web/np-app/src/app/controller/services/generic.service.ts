@@ -12,7 +12,7 @@ import { HandleErrosService } from './handleErros.service';
 export class GenericService {
 
     urlService: string = undefined;
-    api_ref: string = environment.API_URL;
+    api_ref: string = `${environment.API_URL}${environment.API_VERSION}`;
     subject = new Subject<any>();
 
     constructor(
@@ -28,6 +28,7 @@ export class GenericService {
 
     //consultar todos os itens
     public consultar() {
+        console.log(this.api_ref);
         return this.httpClient.get<any[]>(`${this.api_ref}/${this.urlService}`, { observe: 'response' })
             .pipe(
                 catchError(this.handleErrosService.handleError)

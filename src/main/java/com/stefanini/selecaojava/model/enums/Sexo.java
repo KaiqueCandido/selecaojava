@@ -1,4 +1,4 @@
-package com.stefanini.selecaojava.mode.enums;
+package com.stefanini.selecaojava.model.enums;
 
 public enum Sexo {
 	MASCULINO("Masculino"), FEMININO("Feminino");

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.stefanini.selecaojava.mode.entity.Pessoa;
+import com.stefanini.selecaojava.model.entity.Pessoa;
 
 public interface PessoaRepository extends MongoRepository<Pessoa, String> {
 	

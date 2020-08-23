@@ -5,8 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import com.stefanini.selecaojava.mode.entity.Pessoa;
-import com.stefanini.selecaojava.mode.enums.Sexo;
+import com.stefanini.selecaojava.model.entity.Pessoa;
+import com.stefanini.selecaojava.model.enums.Sexo;
 
 public class PessoaServiceBuilder {
 	

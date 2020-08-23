@@ -9,5 +9,6 @@ export class PessoaModel {
         public naturalidade: string,
         public nacionalidade: string,
         public cpf: string,
+        public endereco: string,
         ) { }
     }

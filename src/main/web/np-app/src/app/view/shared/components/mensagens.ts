@@ -6,12 +6,13 @@ export enum Mensagens {
     CadastroDetail = 'O cadastro foi realizado com sucesso.',
     CadastroErroSummary = 'Erro ao cadastrar',
     CadastroErroDetail = 'O cadastro não foi realizado, verifique suas informações.',
-    cadastroErroCpfDuplicadoDetail = 'CPF já cadastrado',
+    CadastroErroCpfDuplicadoDetail = 'CPF já cadastrado',
     
     AtualizarSummary = 'Atualização realizada.',
     AtualizarDetail = 'A atualização foi realizada com sucesso.',
     AtualizarErroSummary = 'Erro ao atualizar',
     AtualizarErroDetail = 'A atualização não foi realizada, verifique suas informações.',
+    AtualizarEnderecoObrigatorio = 'Campo Endereço Obrigatorio',
    
     ExcluirSummary = 'Exclusão realizada.',
     ExcluirDetail = 'A exclusão foi realizada com sucesso.',

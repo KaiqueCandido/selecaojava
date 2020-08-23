@@ -66,6 +66,7 @@ export class CadastroPessoaComponent implements OnInit {
       naturalidade: new FormControl(('')),
       nacionalidade: new FormControl(('')),
       cpf: new FormControl((''), [Validators.required]),
+      endereco: new FormControl(('')),
     });
   }
 
@@ -92,7 +93,7 @@ export class CadastroPessoaComponent implements OnInit {
     this.cadastroForm.controls.naturalidade.setValue(item.naturalidade);
     this.cadastroForm.controls.nacionalidade.setValue(item.nacionalidade);
     this.cadastroForm.controls.cpf.setValue(item.cpf);
-    console.log(item);
+    this.cadastroForm.controls.endereco.setValue(item.endereco);
     this.labelDialog = 'Edição de Pessoa';
     this.isEditar = true;
   }
@@ -135,7 +136,7 @@ export class CadastroPessoaComponent implements OnInit {
           this.messageService.add({
             severity: 'warn',
             summary: Mensagens.CadastroErroSummary,
-            detail: error.error.code === 409 ? Mensagens.cadastroErroCpfDuplicadoDetail : Mensagens.CadastroErroDetail
+            detail: error.error.code === 409 ? Mensagens.CadastroErroCpfDuplicadoDetail : Mensagens.CadastroErroDetail
           });
           this.cadastroForm.reset();
         }
@@ -151,8 +152,8 @@ export class CadastroPessoaComponent implements OnInit {
           this.messageService.clear();
           this.messageService.add({
             severity: 'success',
-            summary: Mensagens.ExcluirSummary,
-            detail: Mensagens.ExcluirDetail
+            summary: Mensagens.AtualizarSummary,
+            detail: Mensagens.AtualizarDetail
           });
           this.eventOutput.emit();
           this.cadastroForm.reset();
@@ -161,8 +162,8 @@ export class CadastroPessoaComponent implements OnInit {
           this.messageService.clear();
           this.messageService.add({
             severity: 'error',
-            summary: Mensagens.ExcluirErroSummary,
-            detail: Mensagens.ExcluirErroDetail
+            summary: Mensagens.AtualizarErroSummary,
+            detail: error.error.code === 406 ? Mensagens.AtualizarEnderecoObrigatorio : Mensagens.AtualizarErroDetail
           });
         }
       );

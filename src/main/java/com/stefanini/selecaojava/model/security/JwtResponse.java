@@ -1,4 +1,4 @@
-package com.stefanini.selecaojava.mode.security;
+package com.stefanini.selecaojava.model.security;
 
 import java.io.Serializable;
 

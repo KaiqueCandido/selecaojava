@@ -1,4 +1,4 @@
-package com.stefanini.selecaojava.mode.entity;
+package com.stefanini.selecaojava.model.entity;
 
 import java.io.Serializable;
 

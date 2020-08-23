@@ -1,3 +1,6 @@
+import { LoginService } from './../../../controller/services/login.service';
+import { GenericService } from './../../../controller/services/generic.service';
+import { MessageService } from 'primeng/api';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,12 +17,20 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
 
   constructor(
+    private loginService: LoginService,
+    private messageService: MessageService,
     private router: Router
   ) { }
 
   //função que inicia o componente
   ngOnInit() {
+    this.setUrl();
     this.formComponent();
+  }
+
+  //função que define o tipo de endpoint 
+  setUrl() {
+    this.loginService.tipoUrl('authenticate');
   }
 
   //função que define o formulário 
@@ -32,7 +43,15 @@ export class LoginComponent implements OnInit {
 
   //função que chama a rota para home
   fazerLogin() {
-    this.router.navigate(['home/pessoa']);
+    var addlogin = this.loginForm.value;
+    this.loginService.logar(addlogin)
+      .subscribe(
+        (resp) => {
+          this.messageService.clear();
+          this.loginForm.reset();
+          this.router.navigate(['home/pessoa']);
+        }
+      );
   }
 
 }

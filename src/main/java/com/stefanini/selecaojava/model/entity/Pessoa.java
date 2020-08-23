@@ -1,11 +1,11 @@
-package com.stefanini.selecaojava.mode.entity;
+package com.stefanini.selecaojava.model.entity;
 
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.stefanini.selecaojava.mode.enums.Sexo;
+import com.stefanini.selecaojava.model.enums.Sexo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,6 +38,7 @@ public class Pessoa implements AbstractEntity {
 	private String naturalidade;
 	private String nacionalidade;
 	private String cpf;
+	private String endereco;
 	private Date dt_cadastro;
 	private Date dt_atualizacao;
 

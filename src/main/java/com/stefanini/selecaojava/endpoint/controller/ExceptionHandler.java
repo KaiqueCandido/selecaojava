@@ -12,4 +12,7 @@ public class ExceptionHandler {
 		return new ResponseObjectError(409, e.getMessage());
 	}
 
+	ResponseObjectError notAccepttable(Exception e) {
+		return new ResponseObjectError(406, e.getMessage());
+	}
 }

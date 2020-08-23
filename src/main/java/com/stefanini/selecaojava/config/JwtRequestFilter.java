@@ -18,14 +18,14 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.stefanini.selecaojava.endpoint.service.JwtUserDetailsService;
 
 import io.jsonwebtoken.ExpiredJwtException;
-import lombok.RequiredArgsConstructor;
 
 @Component
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class JwtRequestFilter extends OncePerRequestFilter {
 
+	@Autowired
 	private JwtUserDetailsService jwtUserDetailsService;
-
+	
+	@Autowired
 	private JwtTokenUtil jwtTokenUtil;
 
 	@Override

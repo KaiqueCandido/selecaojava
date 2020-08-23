@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.stefanini.selecaojava.config.JwtTokenUtil;
 import com.stefanini.selecaojava.endpoint.service.JwtUserDetailsService;
-import com.stefanini.selecaojava.mode.security.JwtRequest;
-import com.stefanini.selecaojava.mode.security.JwtResponse;
+import com.stefanini.selecaojava.model.security.JwtRequest;
+import com.stefanini.selecaojava.model.security.JwtResponse;
 
 @RestController
-@RequestMapping("/api/v1/authenticate")
+@RequestMapping("/api/authenticate")
 public class JwtAuthenticationController {
 	
 	@Autowired

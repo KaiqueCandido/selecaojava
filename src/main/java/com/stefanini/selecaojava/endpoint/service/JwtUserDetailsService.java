@@ -14,8 +14,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		if ("springuser".equals(username)) {
-			return new User("springuser", "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6",
+		if ("selecaojava".equals(username)) {
+			return new User("selecaojava", "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6",
 					new ArrayList<>());
 		} else {
 			throw new UsernameNotFoundException("Usuario não encontrado para o username: " + username);
