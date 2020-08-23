@@ -6,9 +6,7 @@ spring:
   name: selecaojava
  data:
   mongodb:
-   host: localhost
-   port: 27018
-   database: selecaojava
+   uri: mongodb+srv://admin:HgV0iEkoFI6gMPvg@cluster0.fglkw.mongodb.net/selecaojava?retryWrites=true&w=majority
 
 jwt:
   secret: c2VjcmV0S2V5

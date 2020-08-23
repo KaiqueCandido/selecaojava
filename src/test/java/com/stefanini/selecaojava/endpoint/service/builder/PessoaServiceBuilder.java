@@ -30,6 +30,22 @@ public class PessoaServiceBuilder {
 		return pessoa;
 	}
 	
+	public Pessoa mockPessoaWitchEndereco() {
+		Pessoa pessoa = new Pessoa();
+		pessoa.setId("5f3edb50de186a0acf8f3ad0");
+		pessoa.setNome("Kaique Oliveira");
+		pessoa.setSexo(Sexo.MASCULINO);
+		pessoa.setEmail("kcoliveira2@stefanini.com");
+		pessoa.setDt_nascimento(new Date());
+		pessoa.setNaturalidade("São Paulo");
+		pessoa.setNacionalidade("Brasileira");
+		pessoa.setCpf("99543522014");
+		pessoa.setEndereco("Endereco");
+		pessoa.setDt_cadastro(new Date());
+		pessoa.setDt_atualizacao(new Date());
+		return pessoa;
+	}
+	
 	public List<Pessoa> mockLstPessoa() {
 		Pessoa pessoa = new Pessoa();
 		pessoa.setId("5f3edb50de186a0acf8f3ad0");
