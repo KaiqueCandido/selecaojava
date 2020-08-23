@@ -24,7 +24,6 @@ public class PessoaServiceBuilder {
 		pessoa.setDt_nascimento(new Date());
 		pessoa.setNaturalidade("São Paulo");
 		pessoa.setNacionalidade("Brasileira");
-		pessoa.setCpf("99543522014");
 		pessoa.setDt_cadastro(new Date());
 		pessoa.setDt_atualizacao(new Date());
 		return pessoa;

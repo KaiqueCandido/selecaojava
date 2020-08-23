@@ -70,6 +70,17 @@ public class PessoaServiceV2Test {
 		}
 	}
 
+	@Test
+	public void testSave2() {
+		try {
+			Pessoa pessoa = PessoaServiceBuilder.mockPessoaServiceBuilder().mockPessoa();
+			when(pessoaService.save(pessoa)).thenReturn(pessoa);
+			pessoaService.save(pessoa);
+		} catch (PessoaException e) {
+			e.printStackTrace();
+		}
+	}
+
 	@Test(expected = PessoaException.class)
 	public void testUpdate() throws PessoaException {
 		Pessoa pessoa = PessoaServiceBuilder.mockPessoaServiceBuilder().mockPessoa();
