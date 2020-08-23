@@ -1,5 +1,6 @@
 package com.stefanini.selecaojava.endpoint.service;
 
+import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,30 +28,33 @@ public class PessoaService {
 		log.info("Geting one people");
 		Optional<Pessoa> optional = pessoaRepository.findById(id);
 		if (optional.isEmpty()) {
-			throw new PessoaException("No value present");
+			throw new PessoaException("Nenhum valor presente");
 		}
 		return optional.get();
 	}
 
-	public Pessoa save(Pessoa pessoa) {
+	public Pessoa save(Pessoa pessoa) throws PessoaException {
 		log.info("Saving people");
+		if (!pessoaRepository.findByCpf(pessoa.getCpf()).isEmpty()) {
+			throw new PessoaException("CPF já cadastrado");
+		}
+		pessoa.setDt_cadastro(new Date());
 		return pessoaRepository.save(pessoa);
 	}
 
 	public Pessoa update(Pessoa pessoa) {
 		log.info("Updating people");
+		pessoa.setDt_atualizacao(new Date());
 		return pessoaRepository.save(pessoa);
 	}
 
-	public Pessoa deleteById(Pessoa pessoa) {
+	public Pessoa delete(String id) throws PessoaException {
 		log.info("Deleting people");
-		pessoaRepository.deleteById(pessoa.getId());
-		return pessoa;
+		Optional<Pessoa> optional = pessoaRepository.findById(id);
+		if (optional.isEmpty()) {
+			throw new PessoaException("Nenhum valor presente");
+		}
+		pessoaRepository.deleteById(optional.get().getId());
+		return optional.get();
 	}
-
-	public Long count() {
-		log.info("Counting people");
-		return pessoaRepository.count();
-	}
-
 }

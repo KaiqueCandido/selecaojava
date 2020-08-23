@@ -1,0 +1,83 @@
+<div *ngIf="displayAdicionar">
+    <p-dialog header="{{labelDialog}}" [(visible)]="displayAdicionar" [modal]="true" [minY]="90" [baseZIndex]="10000"
+        [style]="{'min-height':'140px', 'max-height':'540px', 'height':'500px'}">
+
+        <div [formGroup]="cadastroForm" class="p-col-12">
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-12">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" size="35" pInputText formControlName="nome"
+                        placeholder="Nome da Pessoa" required minlength="4" maxlength="60">
+                </div>
+
+                <div class="ui-g-12 ui-md-12">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="text" size="100" pInputText formControlName="email"
+                    placeholder="E-mail da Pessoa" minlength="4" maxlength="100" email="true">
+                </div>
+                
+                <div class="ui-g-6 ui-md-6">
+                    <label for="naturalidade">Naturalidade</label>
+                    <input id="naturalidade" type="text" size="35" pInputText formControlName="naturalidade"
+                    placeholder="Naturalidade da Pessoa" minlength="4" maxlength="60">
+                </div>
+                
+                <div class="ui-g-6 ui-md-6">
+                    <label for="nacionalidade">Nacionalidade</label>
+                    <input id="nacionalidade" type="text" size="35" pInputText formControlName="nacionalidade"
+                    placeholder="Nacionalidade da Pessoa" minlength="4" maxlength="60">
+                </div>
+
+                <div class="ui-g-3 ui-md-3">
+                    <label for="dt_nascimento">Dt. Nascimento</label>
+                    <p-calendar type="date" #dt_nascimento formControlName="dt_nascimento" dateFormat="dd/mm/yy" [showIcon]="true" required></p-calendar>
+                </div>
+                
+                <div class="ui-g-5 ui-md-5">
+                    <label for="sexo">Sexo</label>
+                    <p-dropdown id="sexo" [options]="lstSexo" placeholder="Selecione um Sexo" [showClear]="true" formControlName="sexo"></p-dropdown>
+                </div>
+                
+                <div class="ui-g-4 ui-md-4">
+                    <label for="cpf">CPF</label>
+                    <input id="cpf" type="text" size="35" pInputText formControlName="cpf" placeholder="CPF" required
+                    minlength="11" maxlength="11" (keypress)="numberOnly($event)">
+                </div>
+            </div>
+
+            <br>
+
+            <p-footer>
+                <div style="float: right;">
+                    <div class="ui-g-6 ui-md-6">
+                        <button type="button" pButton icon="pi pi-times" (click)="cancelar()" label="Cancelar"
+                            class="btn-secondary"></button>
+                    </div>
+                    <div class="ui-g-6 ui-md-6">
+                        <button type="button" pButton icon="pi pi-check" (click)="salvar()" label="Salvar"
+                            [disabled]="!cadastroForm.valid" style="float: right;" *ngIf="!isEditar"></button>
+
+                        <button type="button" pButton icon="pi pi-check" (click)="editar()" label="Editar"
+                            [disabled]="!cadastroForm.valid" style="float: right;" *ngIf="isEditar"></button>
+                    </div>
+                </div>
+            </p-footer>
+
+        </div>
+
+    </p-dialog>
+
+</div>
+
+<div *ngIf="displayExcluir">
+    <p-dialog header="Exclusão de Pessoa" [(visible)]="displayExcluir" [modal]="true" [minY]="90" [baseZIndex]="10000"
+        [style]="{'min-height':'140px'}">
+        <p> A pessoa <strong>{{pessoaNome}}</strong>, será <strong>excluida</strong> da ferramenta, deseja continuar?
+        </p>
+        <p-footer>
+            <button type="button" class="btn-secondary" pButton icon="pi pi-times" (click)="displayExcluir = false"
+                label="Não"></button>
+            <button type="button" pButton icon="pi pi-check" (click)="excluir()" label="Sim"></button>
+        </p-footer>
+    </p-dialog>
+</div>

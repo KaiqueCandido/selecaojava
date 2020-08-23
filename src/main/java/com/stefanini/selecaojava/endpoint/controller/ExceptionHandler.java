@@ -8,4 +8,8 @@ public class ExceptionHandler {
 		return new ResponseObjectError(404, e.getMessage());
 	}
 
+	ResponseObjectError conflict(Exception e) {
+		return new ResponseObjectError(409, e.getMessage());
+	}
+
 }
