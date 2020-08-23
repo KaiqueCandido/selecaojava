@@ -1,4 +1,4 @@
-# selecao-java-web
+# SelecaoJava
 
 Este projeto tem como objetivo apresentar uma API para cadastramento de pessoas (CRUD);
 Aqui você poderá listar, adicionar, editar e remover;
