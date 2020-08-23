@@ -28,7 +28,7 @@ public class PessoaServiceV2 {
 	public Pessoa get(String id) throws PessoaException {
 		log.info("Geting one people");
 		Optional<Pessoa> optional = pessoaRepository.findById(id);
-		if (optional.isEmpty()) {
+		if (!optional.isPresent()) {
 			throw new PessoaException("Nenhum valor presente");
 		}
 		return optional.get();
@@ -58,7 +58,7 @@ public class PessoaServiceV2 {
 	public Pessoa delete(String id) throws PessoaException {
 		log.info("Deleting people");
 		Optional<Pessoa> optional = pessoaRepository.findById(id);
-		if (optional.isEmpty()) {
+		if (!optional.isPresent()) {
 			throw new PessoaException("Nenhum valor presente");
 		}
 		pessoaRepository.deleteById(optional.get().getId());
